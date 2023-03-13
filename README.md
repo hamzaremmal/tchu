@@ -19,3 +19,11 @@ Developed by [@hamzaremmal](https://github.com/hamzaremmal) and [@ziazi](https:/
 - [Interface graphique](https://cs108.epfl.ch/archive/21/p/10_gui.html)
 - [Programmes principaux](https://cs108.epfl.ch/archive/21/p/11_main.html)
 - [Étape libre](https://cs108.epfl.ch/archive/21/p/12_free.html)
+
+### How to start the game :
+
+This project uses [Maven](https://maven.apache.org/) as build tool. It also uses the [JavaFX Maven Plugin](https://mvnrepository.com/artifact/org.openjfx/javafx-maven-plugin/0.0.8), therefore, we can use the following command to start the game:
+
+```console
+mvn javafx:run
+```
