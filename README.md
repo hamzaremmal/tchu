@@ -2,7 +2,7 @@
 
 TODO : Write the README
 
-Developed by @hamzaremmal and @ziazi
+Developed by [@hamzaremmal](https://github.com/hamzaremmal) and [@ziazi](https://github.com/ziazi)
 
 ### Étapes du Projet
 
