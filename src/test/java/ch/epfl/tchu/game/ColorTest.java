@@ -12,7 +12,7 @@ class ColorTest {
     @Test
     void colorValuesAreDefinedInTheRightOrder() {
         var expectedValues = new Color[]{
-                BLACK, VIOLET, BLUE, GREEN, YELLOW, ORANGE, RED, WHITE
+                BLACK, VIOLET, BLUE, GREEN, YELLOW, ORANGE, RED, WHITE, NEUTRAL
         };
         assertArrayEquals(expectedValues, Color.values());
     }
