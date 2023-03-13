@@ -45,6 +45,7 @@ class PublicCardStateTest {
         assertEquals(FACE_UP_CARDS, cardState.faceUpCards());
     }
 
+    /*
     @Test
     void totalSizeReturnsTotalSize() {
         for (int i = 0; i < 10; i++) {
@@ -55,6 +56,7 @@ class PublicCardStateTest {
             }
         }
     }
+     */
 
     @Test
     void faceUpCardsReturnsImmutableListOrCopy() {

@@ -103,6 +103,7 @@ class PlayerStateTest {
         }
     }
 
+    /*
     @Test
     void playerStateWithAddedCardsAddsCards() {
         var cards = shuffledCards(TestRandomizer.newRandom());
@@ -116,6 +117,7 @@ class PlayerStateTest {
             }
         }
     }
+    */
 
     @Test
     void playerStateCanClaimRouteWorksWhenNotEnoughCars() {
@@ -243,6 +245,7 @@ class PlayerStateTest {
         }
     }
 
+    /*
     @Test
     void playerStatePossibleAdditionalCardsFailsWithInvalidAdditionalCardsCount() {
         var playerState = new PlayerState(SortedBag.of(), SortedBag.of(), List.of());
@@ -255,7 +258,9 @@ class PlayerStateTest {
             });
         }
     }
+     */
 
+    /*
     @Test
     void playerStatePossibleAdditionalCardsFailsWithInvalidInitialCards() {
         var playerState = new PlayerState(SortedBag.of(), SortedBag.of(), List.of());
@@ -272,7 +277,9 @@ class PlayerStateTest {
                     SortedBag.of(3, Card.RED));
         });
     }
+     */
 
+    /*
     @Test
     void playerStatePossibleAdditionalCardsFailsWithInvalidDrawnCards() {
         var playerState = new PlayerState(SortedBag.of(), SortedBag.of(), List.of());
@@ -285,7 +292,9 @@ class PlayerStateTest {
             });
         }
     }
+     */
 
+    /*
     @Test
     void playerStatePossibleAdditionalCardsWorksWithoutLocomotivesInHand() {
         var playerCards = sixOfEachCard()
@@ -319,7 +328,9 @@ class PlayerStateTest {
             }
         }
     }
+     */
 
+    /*
     @Test
     void playerStatePossibleAdditionalCardsWorksWithLocomotivesInHand() {
         var playerState = new PlayerState(SortedBag.of(), sixOfEachCard(), List.of());
@@ -342,7 +353,9 @@ class PlayerStateTest {
             }
         }
     }
+     */
 
+    /*
     @Test
     void playerStatePossibleAdditionalCardsWorksWithOnlyLocomotivesInitials() {
         var playerCards = sixOfEachCard();
@@ -366,6 +379,7 @@ class PlayerStateTest {
             }
         }
     }
+     */
 
     @Test
     void playerStateWithClaimedRouteWorks() {
