@@ -1,5 +1,8 @@
 # tchu
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/maintainability)](https://codeclimate.com/github/hamzaremmal/tchu/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/test_coverage)](https://codeclimate.com/github/hamzaremmal/tchu/test_coverage)
+
 TODO : Write the README
 
 Developed by [@hamzaremmal](https://github.com/hamzaremmal) and [@ziazi](https://github.com/ziazi)
