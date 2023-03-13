@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="tChu Game" target="11" />
+      <module name="tChu Game" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
