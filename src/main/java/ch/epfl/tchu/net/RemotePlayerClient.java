@@ -34,11 +34,12 @@ public class RemotePlayerClient {
 	 * @param name (String)- named host
 	 * @param port (int)- port of the connection
 	 */
-    public RemotePlayerClient(Player player, String name, int port) throws IOException{
+    public RemotePlayerClient(Player player, String host, int port, String name) throws IOException{
         this.player = player;
-        this.socket = new Socket(name,port);
+        this.socket = new Socket(host,port);
          reader = new BufferedReader(new InputStreamReader(socket.getInputStream(),StandardCharsets.US_ASCII));
-         writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(),StandardCharsets.US_ASCII)); 					 
+         writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(),StandardCharsets.US_ASCII));
+         write(name + "\n");
     }
     
     /**

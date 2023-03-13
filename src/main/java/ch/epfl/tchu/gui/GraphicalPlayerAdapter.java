@@ -1,8 +1,10 @@
 package ch.epfl.tchu.gui;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
+import javax.sound.sampled.AudioSystem;
 import ch.epfl.tchu.SortedBag;
 import ch.epfl.tchu.game.Card;
 import ch.epfl.tchu.game.Player;
@@ -16,6 +18,7 @@ import ch.epfl.tchu.gui.ActionHandlers.ChooseTicketsHandler;
 import ch.epfl.tchu.gui.ActionHandlers.ClaimRouteHandler;
 import ch.epfl.tchu.gui.ActionHandlers.DrawCardHandler;
 import ch.epfl.tchu.gui.ActionHandlers.DrawTicketsHandler;
+import ch.epfl.tchu.net.Call;
 import javafx.application.Platform;
 
 /**
@@ -32,19 +35,30 @@ public class GraphicalPlayerAdapter implements Player{
     private final ArrayBlockingQueue<Integer> queueINT;
     private final ArrayBlockingQueue<SortedBag<Ticket>> queueSBT;
     private final ArrayBlockingQueue<SortedBag<Card>> queueSBC;
-    
+    private final Call call;
     
     /**
      * Creates the GraphicalPlayerAdapter Object
      */
-     public GraphicalPlayerAdapter() {
+     public GraphicalPlayerAdapter(Call call) {
         queueRoute = new ArrayBlockingQueue<>(2);
         queueINT   = new ArrayBlockingQueue<>(2);
         queueTK    = new ArrayBlockingQueue<>(2);
         queueSBT   = new ArrayBlockingQueue<>(2);
         queueSBC   = new ArrayBlockingQueue<>(2);
+        this.call  = call;
     }
      
+     
+     private static void playSound() {
+         try {
+             var audioStream = AudioSystem.getAudioInputStream(new File("res/sound.wav"));
+             var clip = AudioSystem.getClip();
+             clip.open(audioStream);
+             clip.start();
+             audioStream.close();
+         } catch(Exception e) {}
+     }
      
      
     // ----------------------------------------------------------------------------------------------------------------------------
@@ -110,7 +124,7 @@ public class GraphicalPlayerAdapter implements Player{
      */
     @Override
     public void initPlayers(PlayerId id, Map<PlayerId, String> playerNames) {
-        Platform.runLater(() -> gp = new GraphicalPlayer(id, playerNames));
+        Platform.runLater(() -> gp = new GraphicalPlayer(id, playerNames,call));
     }
 
     /**
@@ -156,6 +170,7 @@ public class GraphicalPlayerAdapter implements Player{
      */
     @Override
     public TurnKind nextTurn() {
+        playSound();
         Platform.runLater(() -> gp.startTurn(ticketsHandler, startTurnCardHandler, startTurnRouteHandler));
         return readFromTheQueueTK();  
     }

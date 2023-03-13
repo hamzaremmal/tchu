@@ -14,6 +14,7 @@ import ch.epfl.tchu.gui.ActionHandlers.ChooseTicketsHandler;
 import ch.epfl.tchu.gui.ActionHandlers.ClaimRouteHandler;
 import ch.epfl.tchu.gui.ActionHandlers.DrawCardHandler;
 import ch.epfl.tchu.gui.ActionHandlers.DrawTicketsHandler;
+import ch.epfl.tchu.net.Call;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
@@ -25,6 +26,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.cell.TextFieldListCell;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -53,12 +55,12 @@ public class GraphicalPlayer {
      * @param id (PlayerId) - the identity of the player
      * @param nameMap (Map<PlayerId, String>) - a map with the identities of all players and they're names
      */
-     public GraphicalPlayer(PlayerId id, Map<PlayerId, String> nameMap) {
+     public GraphicalPlayer(PlayerId id, Map<PlayerId, String> nameMap, Call call) {
          if (!Platform.isFxApplicationThread()) 
              throw new AssertionError("This constructor need to be run on the JAVAFX Application Thread");
          this.gs = new ObservableGameState(id);
          this.info = FXCollections.observableArrayList(new Text(),new Text(),new Text(),new Text(),new Text());
-         this.mainStage = createMainStage(id,nameMap);   
+         this.mainStage = createMainStage(id,nameMap,call);   
          }
      
      
@@ -72,7 +74,7 @@ public class GraphicalPlayer {
       * @param nameMap (Map<PlayerId, String>) - a map with the identities of all players and they're names
       * @return (Stage) -The window that will be opened
       */
-    private Stage createMainStage(PlayerId id, Map<PlayerId, String> nameMap) {
+    private Stage createMainStage(PlayerId id, Map<PlayerId, String> nameMap, Call call) {
         if (!Platform.isFxApplicationThread())
             throw new AssertionError("This method need to be run on the JAVAFX Application Thread");
         var primaryStage = new Stage();
@@ -83,8 +85,16 @@ public class GraphicalPlayer {
         var handView  = DecksViewCreator.createHandView(gs);
         var cardsView = DecksViewCreator.createCardsView(gs, gestionnaireTickets, gestionnaireCartes);
         var infoView  = InfoViewCreator.createInfoView(id, nameMap, gs, info);  
-        var mainPane  = new BorderPane(mapView, null, cardsView, handView, infoView);
+        var menuView  = call != null ? MenuViewCreator.createMenuView(call,nameMap.get(id.next())) : null;
+        var mainPane  = new BorderPane(mapView, menuView, cardsView, handView, infoView);
         primaryStage.setScene(new Scene(mainPane));
+        if(call != null)
+            mainPane.setOnKeyPressed(e -> {
+                if(e.getCode().equals(KeyCode.M))
+                    call.switchSourdine();
+                else
+                    e.consume();
+                });
         primaryStage.show();
         return primaryStage;
         }

@@ -30,6 +30,10 @@ public class RemotePlayerProxy implements Player{
     private final BufferedWriter writer;
     private final BufferedReader reader;
     
+    public String getName() {
+        return read();
+    }
+    
     /**
 	 * creates a player proxy that communicates with a player in the client program using a socket
 	 * @param socket (Socket) - the socket used for the communication 
