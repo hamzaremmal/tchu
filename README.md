@@ -2,6 +2,8 @@
 
 TODO : Write the README
 
+Developed by @hamzaremmal and @ziazi
+
 ### Étapes du Projet
 
 - [Introduction](https://cs108.epfl.ch/archive/21/p/00_introduction.html)
