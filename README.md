@@ -1,12 +1,25 @@
-# tchu
+<div align="center">
+  <h1>tChu</h1>
+</div>
 
-![build](https://github.com/hamzaremmal/tchu/actions/workflows/maven.yml/badge.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/maintainability)](https://codeclimate.com/github/hamzaremmal/tchu/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/test_coverage)](https://codeclimate.com/github/hamzaremmal/tchu/test_coverage)
+<div align="center">
+  <a href="https://github.com/hamzaremmal/tchu"><img src="https://github.com/hamzaremmal/tchu/actions/workflows/maven.yml/badge.svg?branch=master"/></a>
+  <a href="https://codeclimate.com/github/hamzaremmal/tchu/maintainability"><img src="https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/maintainability"/></a>
+  <a href="https://codeclimate.com/github/hamzaremmal/tchu/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/test_coverage"/></a>
+</div>
 
-TODO : Write the README
+## Introduction
 
-Developed by [@hamzaremmal](https://github.com/hamzaremmal) and [@ziazi](https://github.com/ziazi)
+TODO : Write this section
+
+## Gameplay
+
+TODO : Write this section
+
+## Credits
+
+This game was developed by [Hamza REMMAL](https://github.com/hamzaremmal) and [Mehdi ZIAZI](https://github.com/ziazi).
+It's our implementation of the [CS-108](https://cs108.epfl.ch) project ([2021 Edition](https://cs108.epfl.ch/archive/21/)).
 
 ### Étapes du Projet
 
@@ -24,7 +37,7 @@ Developed by [@hamzaremmal](https://github.com/hamzaremmal) and [@ziazi](https:/
 - [Programmes principaux](https://cs108.epfl.ch/archive/21/p/11_main.html)
 - [Étape libre](https://cs108.epfl.ch/archive/21/p/12_free.html)
 
-### How to start the game :
+## How to start the game :
 
 This project uses [Maven](https://maven.apache.org/) as build tool. It also uses the [JavaFX Maven Plugin](https://mvnrepository.com/artifact/org.openjfx/javafx-maven-plugin/0.0.8), therefore, we can use the following command to start the game:
 
