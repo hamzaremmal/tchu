@@ -2,9 +2,9 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
-      <option name="id" value="github" />
-      <option name="name" value="github" />
-      <option name="url" value="https://maven.pkg.github.com/hamzaremmal/lang" />
+      <option name="id" value="gitlab-epfl" />
+      <option name="name" value="gitlab-epfl" />
+      <option name="url" value="https://gitlab.epfl.ch/api/v4/groups/23201/-/packages/maven" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
