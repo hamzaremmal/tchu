@@ -31,8 +31,8 @@ jobs:
         run: mvn test --file pom.xml
       - uses: paambaati/codeclimate-action@v4.0.0
         env:
-          CC_TEST_REPORTER_ID: d0dd5722169d6abffb0c82baef826ba0554e07ec4330723929511a4413f9faaa
-          JACOCO_SOURCE_PATH: "${{github.workspace}}/src/main/java"
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          JACOCO_SOURCE_PATH: "${{ github.workspace }}/src/main/java"
         with:
           coverageCommand: mvn jacoco:report
-          coverageLocations: ${{github.workspace}}/target/site/jacoco/jacoco.xml:jacoco
+          coverageLocations: ${{ github.workspace }}/target/site/jacoco/jacoco.xml:jacoco
