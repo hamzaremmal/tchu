@@ -5,8 +5,8 @@
 <div align="center">
   <a href="https://github.com/hamzaremmal/tchu"><img src="https://github.com/hamzaremmal/tchu/actions/workflows/maven.yml/badge.svg?branch=master"/></a>
   <a href="https://hamzaremmal.github.io/tchu/"><img src="https://github.com/hamzaremmal/tchu/actions/workflows/javadoc.yml/badge.svg?branch=master"/></a>
-  <a href="https://codeclimate.com/github/hamzaremmal/tchu/maintainability"><img src="https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/maintainability"/></a>
-  <a href="https://codeclimate.com/github/hamzaremmal/tchu/test_coverage"><img src="https://api.codeclimate.com/v1/badges/1c2199c4e816df33a7a6/test_coverage"/></a>
+  <a href="https://codeclimate.com/github/hamzaremmal/tchu/maintainability"><img src="https://api.codeclimate.com/v1/badges/630cfbb3f74bb7c89748/maintainability" /></a>
+  <a href="https://codeclimate.com/github/hamzaremmal/tchu/test_coverage"><img src="https://api.codeclimate.com/v1/badges/630cfbb3f74bb7c89748/test_coverage" /></a>
 </div>
 
 ## Introduction
