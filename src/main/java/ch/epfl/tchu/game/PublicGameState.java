@@ -25,10 +25,10 @@ public class PublicGameState {
      * @param ticketsCount (int) - Number of available tickets.
      * @param cardState (PublicCardState) - The public part of the CardState of the game.
      * @param currentPlayerId (PlayerId) - The id of the current player.
-     * @param playerState (Map<PlayerId, PublicPlayerState>) - The mapping between every id and its PublicPlayerState object.
+     * @param playerState (Map) - The mapping between every id and its PublicPlayerState object.
      * @param lastPlayer (PlayerId) - The PlayerId of the last player.
-     * @throws {@code IllegalArgumentException} if the number of tickets is negative or the size of playerState is not equal to 2.
-     * @throws {@code NullPointerException} if the currentPlayerId or the cardState are null.
+     * @throws IllegalArgumentException if the number of tickets is negative or the size of playerState is not equal to 2.
+     * @throws NullPointerException if the currentPlayerId or the cardState are null.
      */
     public PublicGameState(int ticketsCount, PublicCardState cardState, PlayerId currentPlayerId, Map<PlayerId, PublicPlayerState> playerState, PlayerId lastPlayer) {
         Preconditions.checkArgument(ticketsCount >= 0);
@@ -85,7 +85,7 @@ public class PublicGameState {
     
     /**
      * Gets the list of all claimed routes of the player.
-     * @return (List<Route>) - List of all claimed routes.
+     * @return (List) - List of all claimed routes.
      */
     public List<Route> claimedRoutes(){
         List<Route> allRoutes = new ArrayList<>();

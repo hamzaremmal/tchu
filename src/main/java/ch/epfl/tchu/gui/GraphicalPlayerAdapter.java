@@ -39,6 +39,7 @@ public class GraphicalPlayerAdapter implements Player{
     
     /**
      * Creates the GraphicalPlayerAdapter Object
+     * @param call ???
      */
      public GraphicalPlayerAdapter(Call call) {
         queueRoute = new ArrayBlockingQueue<>(2);
@@ -120,7 +121,7 @@ public class GraphicalPlayerAdapter implements Player{
     /**
      * Initialize the Player.
      * @param id (PlayerId) - The id of this Player.
-     * @param playerNames (Map<PlayerId, String>) - The Map with every Player name.
+     * @param playerNames (Map) - The Map with every Player name.
      */
     @Override
     public void initPlayers(PlayerId id, Map<PlayerId, String> playerNames) {
@@ -148,7 +149,7 @@ public class GraphicalPlayerAdapter implements Player{
 
     /**
      * Configures the Player to display the pop-up window with the tickets to choose from.
-     * @param tickets (SortedBag<Ticket>) - The initial tickets to choose from.
+     * @param tickets (SortedBag) - The initial tickets to choose from.
      */
     @Override
     public void setInitialTicketChoice(SortedBag<Ticket> tickets) {
@@ -157,7 +158,7 @@ public class GraphicalPlayerAdapter implements Player{
 
     /**
      * Gives the tickets the player decided to keep.
-     * @return (SortedBag<Ticket>) - The chosen tickets.
+     * @return (SortedBag) - The chosen tickets.
      */
     @Override
     public SortedBag<Ticket> chooseInitialTickets() {
@@ -177,8 +178,8 @@ public class GraphicalPlayerAdapter implements Player{
 
     /**
      * Gives the Player tickets to choose from and returns the chosen tickets.
-     * @param options (SortedBag<Ticket>) - The tickets to choose from.
-     * @return (SortedBag<Ticket>) - The chosen tickets.
+     * @param options (SortedBag) - The tickets to choose from.
+     * @return (SortedBag) - The chosen tickets.
      */
     @Override
     public SortedBag<Ticket> chooseTickets(SortedBag<Ticket> options) {
@@ -207,7 +208,7 @@ public class GraphicalPlayerAdapter implements Player{
 
     /**
      * Gives the initial cards the player decided to claim with.
-     * @return (SortedBag<Card>) - The cards to claim with.
+     * @return (SortedBag) - The cards to claim with.
      */
     @Override
     public SortedBag<Card> initialClaimCards() {
@@ -216,8 +217,8 @@ public class GraphicalPlayerAdapter implements Player{
 
     /**
      * Gives the additional cards to pick from and returns the SortedBag to use.
-     * @param options (List<SortedBag<Card>>) - The options to pick from.
-     * @return (SortedBag<Card>) - The chosen SortedBag.
+     * @param options (List) - The options to pick from.
+     * @return (SortedBag) - The chosen SortedBag.
      */
     @Override
     public SortedBag<Card> chooseAdditionalCards(List<SortedBag<Card>> options) {

@@ -22,8 +22,8 @@ public final class Trip {
      * @param from (Station) - The departure Station.
      * @param to (Station) - The arrival Station.
      * @param points (int) - The Trip's points.
-     * @throws {@code IllegalArgumentException} if points <= 0.
-     * @throws {@code NullPointerException} if one of the stations is null.
+     * @throws IllegalArgumentException if {@code points <= 0}.
+     * @throws NullPointerException if one of the stations is null.
      */
     public Trip(Station from, Station to, int points) {
         Preconditions.checkArgument(points > 0);
@@ -33,12 +33,12 @@ public final class Trip {
     }
 
     /**
-     * Return a List of Trip with all the posibilities with the given parameters.
-     * @param from (List<Station>) - List of the departure Stations.
-     * @param to (List<Station>) - List of the arrival Stations.
-     * @param points (int) - The points of all of the computed Trips
-     * @throws {@code IllegalArgumentException} if the points <= 0 or the lists in parameters are null.
-     * @return (List<Trip>) - List of all possible Trips.
+     * Return a List of Trip with all the possibilities with the given parameters.
+     * @param from (List) - List of the departure Stations.
+     * @param to (List) - List of the arrival Stations.
+     * @param points (int) - The points of all the computed Trips
+     * @throws IllegalArgumentException if the {@code points <= 0} or the lists in parameters are {@code null}.
+     * @return (List) - List of all possible Trips.
      */
     public static List<Trip> all(List<Station> from, List<Station> to, int points){
         Preconditions.checkArgument(points > 0 && Objects.nonNull(from) && Objects.nonNull(to));

@@ -17,7 +17,7 @@ public final class Station {
      * Build a new Station object with the given parameters.
      * @param id (int) - The id of the Station.
      * @param name (String) - The name of the Station.
-     * @throws {@code IllegalArgumentException} if the id is a negative number.
+     * @throws IllegalArgumentException if the id is a negative number.
      */
     public Station(int id, String name) {
         Preconditions.checkArgument(id >= 0);

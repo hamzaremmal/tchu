@@ -7,13 +7,19 @@ import java.util.Map;
 import java.util.Random;
 import ch.epfl.tchu.SortedBag;
 
+/**
+ * ???
+ */
 public final class PlayerAutomatique implements Bot{
     
     private PublicGameState gameState;
     private PlayerState playerState;
     private SortedBag<Ticket> initialTicketsDistribution ;
     private Route routeTryingToClaim;
-    
+
+    /**
+     * ???
+     */
     public PlayerAutomatique() {}
 
     /**

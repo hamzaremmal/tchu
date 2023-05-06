@@ -9,15 +9,23 @@ import java.util.List;
  *
  */
 public enum Color {
-  
+    /** ??? */
     BLACK,
+    /** ??? */
     VIOLET,
+    /** ??? */
     BLUE,
+    /** ??? */
     GREEN,
+    /** ??? */
     YELLOW,
+    /** ??? */
     ORANGE,
+    /** ??? */
     RED,
+    /** ??? */
     WHITE,
+    /** ??? */
     NEUTRAL;
 
     /**

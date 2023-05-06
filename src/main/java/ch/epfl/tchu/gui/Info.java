@@ -114,8 +114,8 @@ public final  class Info {
    
    /**
     * returns a message that indicates that the players have finished with the same amount of points
-    * @param playerNames(List<String>)- list of players
-    * @param points(int)-points scored
+    * @param playerNames (List)- list of players
+    * @param points (int)-points scored
     * @return (String) - 
     */
    public static String draw(List<String> playerNames, int points) {
@@ -169,8 +169,8 @@ public final  class Info {
         }
     
     /** indicates that the player claimed a route using a set of cards
-     * @param route(Route)- the route claimed
-     * @param cards(SortedBag<Card>)-cards played
+     * @param route (Route)- the route claimed
+     * @param cards (SortedBag)-cards played
      * @return (String) - the message
      */
     public String claimedRoute(Route route, SortedBag<Card> cards) { 
@@ -178,7 +178,7 @@ public final  class Info {
         }
     /** indicates that the player attempted to claim a tunnel using a set of cards
      * @param route(Route)- the tunnel aimed at
-     * @param cards(SortedBag<Card>)-cards played
+     * @param initialCards (SortedBag)-cards played
      * @return (String) - the message
      */
     public String attemptsTunnelClaim(Route route, SortedBag<Card> initialCards) { 
@@ -186,8 +186,8 @@ public final  class Info {
         }
     
     /** indicates that the player drew additional cards specifying it cost 
-     * @param drawnCards(SortedBag<Card>)- cards drawn
-     * @param int(additionnalCost)-points that the drawn cards are worth
+     * @param drawnCards (SortedBag)- cards drawn
+     * @param additionalCost -points that the drawn cards are worth
      * @return (String) - the message
      */
     public String drewAdditionalCards(SortedBag<Card> drawnCards, int additionalCost) {
@@ -215,8 +215,7 @@ public final  class Info {
         }
     
     /** indicates that the player gets 10 bonus points for the longest trail
-     * @param trail(Trail)- longest trail
-     * @param cards(SortedBag<Card>)-cards played
+     * @param longestTrail (Trail)- longest trail
      * @return (String) - the message
      */
     public String getsLongestTrailBonus(Trail longestTrail) {

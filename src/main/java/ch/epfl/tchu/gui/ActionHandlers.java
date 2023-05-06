@@ -49,7 +49,7 @@ public interface ActionHandlers {
         /**
          * communicates  the kind of action performed (claim route), the route to claim and the cards used for that to the game thread
          * @param route (Route) - route to claim
-         * @param cards (SortedBag<Card>) - cards used for that
+         * @param cards (SortedBag) - cards used for that
          */
         void onClaimRoute(Route route, SortedBag<Card> cards);
     }
@@ -63,7 +63,7 @@ public interface ActionHandlers {
     public interface ChooseTicketsHandler extends ActionHandlers{
         /**
          * communicates the chosen tickets to the game thread
-         * @param tickets (SortedBag<Ticket>) - chosen tickets
+         * @param tickets (SortedBag) - chosen tickets
          */
         void onChooseTickets(SortedBag<Ticket> tickets);
     }
@@ -77,7 +77,7 @@ public interface ActionHandlers {
     public interface ChooseCardsHandler extends ActionHandlers{
         /**
          * communicates the chosen cards to the game thread
-         * @param cards (SortedBag<Card>) -chosen cards
+         * @param cards (SortedBag) - chosen cards
          */
         void onChooseCards(SortedBag<Card> cards);
     }

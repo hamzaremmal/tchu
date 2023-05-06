@@ -21,9 +21,9 @@ public final class Ticket  implements Comparable<Ticket>{
 	
 	/**
 	 * Builds ticket.
-	 * @param trips (List<Trip>) -trips supported by the ticket
-	 * @throws {@code IllegalArgumentException} if trips is null or empty.
-	 * @throws {@code IllegalArgumentException} if trips is null or empty.
+	 * @param trips (List) -trips supported by the ticket
+	 * @throws IllegalArgumentException if trips is null or empty.
+	 * @throws IllegalArgumentException if trips is null or empty.
 	 */
 	public Ticket(List<Trip> trips) {
 		Preconditions.checkArgument(Objects.nonNull(trips) && trips.size() > 0);

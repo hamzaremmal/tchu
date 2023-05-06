@@ -44,7 +44,7 @@ public final class Deck<C extends Comparable<C>>{
     public boolean isEmpty() { return this.cards.isEmpty();}
     
     /** Returns the card in the top
-     * @throws {@code IllegalArgumentException} if the deck is empty.
+     * @throws IllegalArgumentException if the deck is empty.
      * @return card in the top
      */
     public C topCard() {
@@ -53,7 +53,7 @@ public final class Deck<C extends Comparable<C>>{
     }
     
     /** returns the deck without the top card.
-     * @throws {@code IllegalArgumentException} if the deck is empty.
+     * @throws IllegalArgumentException if the deck is empty.
      * @return the deck without the top card.
      */
     public Deck<C> withoutTopCard(){
@@ -62,9 +62,9 @@ public final class Deck<C extends Comparable<C>>{
     
     /**
      * Returns a SortedBag of the {@code count} top cards of the deck
-     * @param count(int)- number of cards.
-     * @throws {@code IllegalArgumentException} if count is not between 0 (inclusive) & {@code this.size()} (inclusive).
-     * @return (SortedBag<C>)- SortedBag of cards.
+     * @param count (int)- number of cards.
+     * @throws IllegalArgumentException if count is not between 0 (inclusive) and {@code this.size()} (inclusive).
+     * @return (SortedBag)- SortedBag of cards.
      */
     public SortedBag<C> topCards(int count){
         Preconditions.checkArgument(count >= 0 && count<=this.size());
@@ -79,8 +79,8 @@ public final class Deck<C extends Comparable<C>>{
     
     /** 
      * Returns the deck without the {@code count} top cards of the deck.
-     * @param count(int)- number of cards 
-     * @throws {@code IllegalArgumentException} if count is not between 0 (inclusive) & {@code this.size()} (inclusive).
+     * @param count (int)- number of cards
+     * @throws IllegalArgumentException if count is not between 0 (inclusive) and {@code this.size()} (inclusive).
      * @return (Deck) - Deck without the removed number of top cards.
      */
     public Deck<C> withoutTopCards(int count){

@@ -13,11 +13,13 @@ import javafx.stage.Stage;
  * @author Hamza REMMAL (310917)
  * @author Mehdi ZIAZI (311475)
  */
-public class Client{
+public class Client {
 
     
     /**
      * Launch The JavaFX Application.
+     * @param primaryStage ???
+     * @param args ???
      */
     public static void start(Stage primaryStage, String ... args) {
         try {

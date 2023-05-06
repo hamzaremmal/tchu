@@ -135,7 +135,7 @@ public final class ObservableGameState {
     
     /**
      * Returns a read only property containing the game state
-     * @return (ObjectProperty<PublicGameState>) -the property containing the game state
+     * @return (ObjectProperty) -the property containing the game state
      */
     public ReadOnlyObjectProperty<PublicGameState> gameState(){
         return gs;
@@ -158,7 +158,7 @@ public final class ObservableGameState {
     /**
      *  Returns a read only property containing the chosen face up card
      * @param slot (int) - index of the chosen face up card
-     * @return (ReadOnlyObjectProperty<Card>)-the property containing the face up card
+     * @return (ReadOnlyObjectProperty)-the property containing the face up card
      */
     public ReadOnlyObjectProperty<Card> faceUpCard(int slot) {
         return faceUpCards.get(slot);
@@ -168,7 +168,7 @@ public final class ObservableGameState {
      * Returns a read only property containing the identity of the owner of a route
      * or null if no player claimed it yet
      * @param route (Route)-chosen route
-     * @return (ReadOnlyObjectProperty<PlayerId>)-the property containing the id
+     * @return (ReadOnlyObjectProperty)-the property containing the id
      */
     public ReadOnlyObjectProperty<PlayerId> routeId(Route route) {
         return routeMap.get(route);
@@ -236,7 +236,7 @@ public final class ObservableGameState {
     
     /**
      * returns true iff the player specified by this instance can draw tickets and else otherwise 
-     * @return-(boolean)
+     * @return -(boolean)
      */
     public boolean canDrawTickets() { 
         return gs.get().canDrawTickets();
@@ -244,7 +244,7 @@ public final class ObservableGameState {
     
     /**
      * returns true iff the player specified by this instance can draw cards and else otherwise 
-     * @return-(boolean)
+     * @return - (boolean)
      */
     public boolean canDrawCards() { 
         return gs.get().canDrawCards();
@@ -254,7 +254,7 @@ public final class ObservableGameState {
     /**
      * returns the possibilities to claim a given route.
      * @param route (Route) - Route to claim.
-     * @return (List<SortedBag<Card>>) - Possible combinations to claim the route.
+     * @return (List) - Possible combinations to claim the route.
      */
     public List<SortedBag<Card>> possibleClaimCards(Route route) { 
         return Collections.unmodifiableList(ps.get().possibleClaimCards(route));
@@ -262,7 +262,7 @@ public final class ObservableGameState {
     
     /**
      * returns  an observable list containing the tickets of the player specified by this instance
-     * @return (ObservableList<Ticket>)-the observable list containing all the tickets
+     * @return (ObservableList)-the observable list containing all the tickets
      */
     public ObservableList<Ticket> listTickets() {
         return FXCollections.unmodifiableObservableList(this.listTickets);
@@ -270,7 +270,7 @@ public final class ObservableGameState {
     
     /**
      * returns  a map containing the card and the number of it of the player specified by this instance
-     * @return (Map<Card, IntegerProperty>)-the map that for each card assigns an integer property 
+     * @return (Map)-the map that for each card assigns an integer property
      */
     public  Map<Card, ReadOnlyIntegerProperty> cards() { 
         return Collections.unmodifiableMap(cards);
@@ -278,7 +278,7 @@ public final class ObservableGameState {
     
     /**
      * returns the identity of the current player
-     * @return-(PlayerId) id of the current player
+     * @return -(PlayerId) id of the current player
      */
     public ReadOnlyObjectProperty<PlayerId> currentPlayerId() { 
         return currentPlayer;

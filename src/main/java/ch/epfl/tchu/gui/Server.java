@@ -26,13 +26,19 @@ import javafx.stage.StageStyle;
  * @author Hamza REMMAL (310917)
  * @author Mehid ZIAZI (311475)
  */
-public class Server{
-    private final static Alert alert = createWaitingFrame();
+public class Server {
+
+    /** ??? */
+    private static final Alert alert = createWaitingFrame();
+    /** ??? */
     private static String namePlayer_1;
+    /** ??? */
     private static String namePlayer_2;
 
     /**
      * Launch the JavaFX Application
+     * @param primaryStage - ???
+     * @param args - ???
      */
     public static void start(Stage primaryStage,String ... args) {
         namePlayer_1 = Constants.DEFAULT_PLAYER_1_NAME;

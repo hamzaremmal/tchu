@@ -24,7 +24,7 @@ public final class Trail {
 
     /**
      * Build the longest Trail with a given list of Routes
-     * @param routes (List<Route>) - The routes we will build the Trail with
+     * @param routes (List) - The routes we will build the Trail with
      * @return (Trail) - One of the longest Trail composed by the routes
      */
     public static Trail longest(List<Route> routes) {

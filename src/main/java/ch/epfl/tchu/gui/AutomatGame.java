@@ -11,8 +11,16 @@ import ch.epfl.tchu.game.Game;
 import ch.epfl.tchu.game.Player;
 import ch.epfl.tchu.game.PlayerId;
 
+/**
+ * ???
+ */
 public class AutomatGame {
-    
+
+    /**
+     * ???
+     * @param player - ???
+     * @param args - ???
+     */
     public static void startAutoParty(Player player,String ...args) {       
         var name = Constants.DEFAULT_PLAYER_1_NAME;
         Map<PlayerId, Player> players = new EnumMap<>(PlayerId.class);

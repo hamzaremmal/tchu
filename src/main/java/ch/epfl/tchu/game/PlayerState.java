@@ -22,9 +22,9 @@ public final class PlayerState extends PublicPlayerState {
 
     /**
      * Build a new PlayerState object with the given parameters.
-     * @param tickets (SortedBag<Ticket>) - Tickets of the player.
-     * @param cards (SortedBag<Card>) - Cards of the player.
-     * @param routes (List<Route>) - Routes claimed by the player.
+     * @param tickets (SortedBag) - Tickets of the player.
+     * @param cards (SortedBag) - Cards of the player.
+     * @param routes (List) - Routes claimed by the player.
      */
     public PlayerState(SortedBag<Ticket> tickets, SortedBag<Card> cards, List<Route> routes) {
         super(tickets.size(), cards.size(), routes);
@@ -34,8 +34,8 @@ public final class PlayerState extends PublicPlayerState {
 
     /**
      * Build the initial playerState to start the game.
-     * @param initialCards (SortedBag<Card>) - The initial drawn cards for the player.
-     * @throws {@code IllegalArgumentException} if {@code initialCards.size() != Constants.INITIAL_CARDS_COUNT}.
+     * @param initialCards (SortedBag) - The initial drawn cards for the player.
+     * @throws IllegalArgumentException if {@code initialCards.size() != Constants.INITIAL_CARDS_COUNT}.
      * @return (PlayerState) - the object to start the game.
      */
     public static PlayerState initial(SortedBag<Card> initialCards) {
@@ -45,20 +45,20 @@ public final class PlayerState extends PublicPlayerState {
 
     /**
      * Gets the player's tickets.
-     * @return (SortedBag<Ticket>) - The player's tickets.
+     * @return (SortedBag) - The player's tickets.
      */
     public SortedBag<Ticket> tickets() { return this.tickets;}
 
     /**
      * Add a list of tickets to the player's tickets.
-     * @param newTickets (SortedBag<Ticket>) - The tickets to add.
+     * @param newTickets (SortedBag) - The tickets to add.
      * @return (PlayerState) - A new PlayerState object with the added tickets.
      */
     public PlayerState withAddedTickets(SortedBag<Ticket> newTickets) { return new PlayerState(this.tickets.union(newTickets), this.cards, this.routes());}
 
     /**
      * Gets the player's cards.
-     * @return (SortedBag<Card>) - The player's cards.
+     * @return (SortedBag) - The player's cards.
      */
     public SortedBag<Card> cards() { return this.cards;}
 
@@ -79,8 +79,8 @@ public final class PlayerState extends PublicPlayerState {
     /**
      * Compute the possibilities to claim a given route.
      * @param route (Route) - Route to claim.
-     * @throws {@code IllegalArgumentException} if  {@code this.carCount() < route.length()}
-     * @return (List<SortedBag<Card>>) - Possible combinations to claim the route.
+     * @throws IllegalArgumentException if  {@code this.carCount() < route.length()}
+     * @return (List) - Possible combinations to claim the route.
      */
     public List<SortedBag<Card>> possibleClaimCards(Route route) {
         Preconditions.checkArgument(this.carCount() >= route.length());                                                                    
@@ -96,10 +96,9 @@ public final class PlayerState extends PublicPlayerState {
     /**
      * Compute a list of all possible additional cards.
      * @param additionalCardsCount (int) - The additional cards.
-     * @param initialCards (SortedBag<Card>) - The initail cards used to claim the route.
-     * @param drawnCards (SortedBag<Card>) - The drawn cards.
-     * @throws {@code IllegalArgumentException} if {@code drawnCards.size() != 3 } or  {@code additionalCardsCount < 1 || additionalCardsCount > 3} or {@code initialCards.isEmpty() || initialCards.toSet().size() >= 3}.
-     * @return (List<SortedBag<Card>>) -
+     * @param initialCards (SortedBag) - The initial cards used to claim the route.
+     * @throws IllegalArgumentException if {@code drawnCards.size() != 3 } or  {@code additionalCardsCount < 1 || additionalCardsCount > 3} or {@code initialCards.isEmpty() || initialCards.toSet().size() >= 3}.
+     * @return (List) -
      */
     public List<SortedBag<Card>> possibleAdditionalCards(int additionalCardsCount, SortedBag<Card> initialCards) {
         Preconditions.checkArgument(additionalCardsCount >= 1 && additionalCardsCount <= Constants.ADDITIONAL_TUNNEL_CARDS);
@@ -131,7 +130,7 @@ public final class PlayerState extends PublicPlayerState {
     /**
      * Claims the given route.
      * @param route (Route) - The claimed route.
-     * @param claimCards (SortedBag<Card>) - Cards used to claim the route.
+     * @param claimCards (SortedBag) - Cards used to claim the route.
      * @return (PlayerState) - The new PlayerState object with the route added to the player's claimed routes and the used cards removed.
      */
     public PlayerState withClaimedRoute(Route route, SortedBag<Card> claimCards) {

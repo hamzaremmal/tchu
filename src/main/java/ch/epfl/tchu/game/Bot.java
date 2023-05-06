@@ -10,10 +10,15 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Bot extends Player{
 
-    final Random random = new Random();
-    
-    
-    public static void waitLikeAHuman() {
+    /**
+     * ???
+     */
+    Random random = new Random();
+
+    /**
+     * ???
+     */
+    static void waitLikeAHuman() {
         int i = random.nextInt(1500);
         do {
             i = random.nextInt(1500);

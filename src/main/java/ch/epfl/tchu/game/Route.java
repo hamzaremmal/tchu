@@ -20,8 +20,10 @@ public final class Route {
    * @author Hamza REMMAL (310917)
    * @author Mehdi ZIAZI (311475)
    */
-	public static enum Level{
+	public enum Level{
+        /** ??? */
 		OVERGROUND ,
+        /** ??? */
 		UNDERGROUND;	
 	}
 	
@@ -39,8 +41,8 @@ public final class Route {
 	 * @param length (int) - length of the route
 	 * @param level (Level) -level of the route
 	 * @param color (Color) - color of the route
-	 * @throws {@code IllegalArgumentException} if the length are not in between {@code Constants.MIN_ROUTE_LENGTH} (inclusive) & {@code Constants.MAX_ROUTE_LENGTH} (inclusive), or the stations are the same.
-	 * @throws {@code NullPointerException} if one of the stations are null
+	 * @throws IllegalArgumentException if the length are not in between {@code Constants.MIN_ROUTE_LENGTH} (inclusive) and {@code Constants.MAX_ROUTE_LENGTH} (inclusive), or the stations are the same.
+	 * @throws NullPointerException if one of the stations are null
 	 */
 	public Route(String id, Station station1, Station station2, int length, Level level, Color color){
 		Preconditions.checkArgument(!(station1.equals(station2)));
@@ -78,7 +80,7 @@ public final class Route {
 	
 	/**
 	 * Get a list of the two stations of the route
-	 * @return (List<Station>) - List of the stations of the route.
+	 * @return (List) - List of the stations of the route.
 	 */
 	public List<Station> stations(){ return List.of(stations[0],stations[1]);}
 	
@@ -97,7 +99,7 @@ public final class Route {
 	/**
 	 * Get the opposite station linked by the route.
 	 * @param station (Station) - A station of the route.
-	 * @throws {@code IllegalArgumentException} if the given station is not part of the route.
+	 * @throws IllegalArgumentException if the given station is not part of the route.
 	 * @return (Station) - The opposite station.
 	 */
 	public Station stationOpposite(Station station) {
@@ -113,7 +115,7 @@ public final class Route {
 	
 	/**
 	 * Get all the combinations that can be played to control the route.
-	 * @return (List<SortedBag<Card>>) - all the combinations.
+	 * @return (List) - all the combinations.
 	 */
 	public List<SortedBag<Card>> possibleClaimCards(){
         List<SortedBag<Card>> array = new ArrayList<>();
@@ -145,10 +147,10 @@ public final class Route {
 	
 	/**
 	 * Get the number of the card that can be played (from the drawn cards) 
-	 * @param claimCards (SortedBag<Card>) - cards the player has chosen to play
-	 * @param drawnCards (SortedBag<Card>) - cards drawn
-	 * @throws {@code IllegalArgumentException} if {@code this.level() != Level.UNDERGROUND} or {@code drawnCards.size() != 3}.
-	 * @return (int) -
+	 * @param claimCards (SortedBag) - cards the player has chosen to play
+	 * @param drawnCards (SortedBag) - cards drawn
+	 * @throws IllegalArgumentException if {@code this.level() != Level.UNDERGROUND} or {@code drawnCards.size() != 3}.
+	 * @return (int) - ???
 	 */
 	public int additionalClaimCardsCount(SortedBag<Card> claimCards, SortedBag<Card> drawnCards) {
         Preconditions.checkArgument(this.level == Level.UNDERGROUND && drawnCards.size() == 3);

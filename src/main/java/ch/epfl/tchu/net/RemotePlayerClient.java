@@ -30,9 +30,11 @@ public class RemotePlayerClient {
     /**
 	 * creates a remote player client that communicates with a player proxy in the server program using a socket
 	 * and acts as the middleman with a player instance
-	 * @param socket (Socket) - the socket used for the communication 
+	 * @param player (Player) - ???
+     * @param host ???
 	 * @param name (String)- named host
 	 * @param port (int)- port of the connection
+     * @throws IOException ???
 	 */
     public RemotePlayerClient(Player player, String host, int port, String name) throws IOException{
         this.player = player;

@@ -16,8 +16,8 @@ public final class StationPartition implements StationConnectivity {
     
     /**
      * Check if the stations are connected
-     * @param station1 (Station) -The first Station.
-     * @param station2 (Station) -The second Station.
+     * @param s1 (Station) -The first Station.
+     * @param s2 (Station) -The second Station.
      */
     @Override
     public boolean connected(Station s1, Station s2) {
@@ -39,7 +39,7 @@ public final class StationPartition implements StationConnectivity {
 
         /**
          * Creates a stationPartition Builder
-         * @param length (int) - number of stations
+         * @param stationCount (int) - number of stations
          */
         public Builder(int stationCount) {
             Preconditions.checkArgument(stationCount >= 0);
@@ -50,8 +50,9 @@ public final class StationPartition implements StationConnectivity {
         
         /**
          * Connects the two stations
-         * @param station1 (Station) -The first Station.
-         * @param station2 (Station) -The second Station.
+         * @param s1 (Station) -The first Station.
+         * @param s2 (Station) -The second Station.
+         * @return ???
          */
         public Builder connect(Station s1, Station s2) {
             partitions[this.representative(s2.id())] = this.representative(s1.id());
@@ -59,13 +60,8 @@ public final class StationPartition implements StationConnectivity {
         }
            
         /**
-         * Creates a new builder 
-         * @param id (String) - id of the route
-         * @param station1 (Station) -The first Station.
-         * @param station2 (Station) -The second Station.
-         * @param length (int) - length of the route
-         * @param level (Level) -level of the route
-         * @param color (Color) - color of the route
+         * Creates a new builder
+         * @return ???
          */
         public StationPartition build() {
             var applatie = new int[partitions.length];

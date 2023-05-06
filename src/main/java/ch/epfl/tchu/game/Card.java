@@ -9,15 +9,23 @@ import java.util.List;
  *
  */
 public enum Card {
-    
+    /** ??? */
     BLACK(Color.BLACK),
+    /** ??? */
     VIOLET(Color.VIOLET),
+    /** ??? */
     BLUE(Color.BLUE),
+    /** ??? */
     GREEN(Color.GREEN),
+    /** ??? */
     YELLOW(Color.YELLOW),
+    /** ??? */
     ORANGE(Color.ORANGE),
+    /** ??? */
     RED(Color.RED),
+    /** ??? */
     WHITE(Color.WHITE),
+    /** ??? */
     LOCOMOTIVE(Color.NEUTRAL);
     
     private final Color color;

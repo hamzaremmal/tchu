@@ -37,7 +37,7 @@ public final class GameState extends PublicGameState{
     
     /**
      * Create the initial GameState for a tchu party.
-     * @param tickets (SortedBag<Ticket>) - SortedBag of the tickets used for this game.
+     * @param tickets (SortedBag) - SortedBag of the tickets used for this game.
      * @param rng (Random) - Object to shuffle the cards.
      * @return (GameState) - The initial GameState of a tchu party with given parameters.
      */
@@ -75,8 +75,8 @@ public final class GameState extends PublicGameState{
     /**
      * 
      * @param count (int) - The number of tickets we ask for.
-     * @throws {@code IllegalArgumentException} if count is not between 0 (inclusive) & the size of the tickets deck. (inclusive).
-     * @return (SortedBag<Ticket>) - A SortedBag of the asked tickets.
+     * @throws IllegalArgumentException if count is not between 0 (inclusive) and the size of the tickets deck. (inclusive).
+     * @return (SortedBag) - A SortedBag of the asked tickets.
      */
     public SortedBag<Ticket> topTickets(int count){
         Preconditions.checkArgument(count >= 0 && count <= this.ticketsCount());
@@ -113,7 +113,7 @@ public final class GameState extends PublicGameState{
     
     /**
      * Get the new GameState with the given cards to the discard.
-     * @param discardedCards
+     * @param discardedCards ???
      * @return (GameState) -  A new GameState object with the given cards added to the discard.
      */
     public GameState withMoreDiscardedCards(SortedBag<Card> discardedCards) {
@@ -134,8 +134,8 @@ public final class GameState extends PublicGameState{
     /**
      * Get the GameState with the chosen tickets added to the player given.
      * @param playerId (PlayerId)  - the id of the player to add to.
-     * @param chosenTickets (SortedBag<Ticket>) - the tickets to add.
-     * @throws {@code IllegalArgumentException}
+     * @param chosenTickets (SortedBag) - the tickets to add.
+     * @throws IllegalArgumentException ???
      * @return (GameState) -  A new GameState object with the given tickets added to the player.
      */
     public GameState withInitiallyChosenTickets(PlayerId playerId, SortedBag<Ticket> chosenTickets) { 
@@ -148,9 +148,9 @@ public final class GameState extends PublicGameState{
     
     /**
      * Choose cards from the drawn cards
-     * @param drawnTickets (SortedBag<Ticket>) - Cards to choose from.
-     * @param chosenTickets (SortedBag<Ticket>) - Cards chosen.
-     * @throws {@code IllegalArgumentException} if the drawnCards doesn't contains the chosenCards.
+     * @param drawnTickets (SortedBag) - Cards to choose from.
+     * @param chosenTickets (SortedBag) - Cards chosen.
+     * @throws IllegalArgumentException if the drawnCards doesn't contains the chosenCards.
      * @return (GameState) -  A new GameState object with the chosenCards added.
      */
     public GameState withChosenAdditionalTickets(SortedBag<Ticket> drawnTickets, SortedBag<Ticket> chosenTickets) {
@@ -165,7 +165,7 @@ public final class GameState extends PublicGameState{
     /**
      * Get the GameState with the visible card in the given slot added to the current player cards.
      * @param slot (int) - the slot of the chosen card.
-     * @throws {@code IllegalArgumentException} if the player can't pick a card.
+     * @throws IllegalArgumentException if the player can't pick a card.
      * @return (GameState) - A new GameState object with the given slot card added to the current player's cards.
      */
     public GameState withDrawnFaceUpCard(int slot) {
@@ -179,7 +179,7 @@ public final class GameState extends PublicGameState{
     
     /**
      * Get the GameState with the top deck card added to the current player cards.
-     * @throws {@code IllegalArgumentException} if the player can't pick a card.
+     * @throws IllegalArgumentException if the player can't pick a card.
      * @return (GameState) - A new GameState object with the top card added to the current player's cards.
      */
     public GameState withBlindlyDrawnCard() {
@@ -194,7 +194,7 @@ public final class GameState extends PublicGameState{
     /**
      * Claims the given route to the current player.
      * @param route (Route) - The claimed Route.
-     * @param cards (SoretdBag<Card>) - Cards used to claim the route.
+     * @param cards (SortedBag) - Cards used to claim the route.
      * @return (GameState) - A new GameState object with the given tickets added to the player.
      */
     public GameState withClaimedRoute(Route route, SortedBag<Card> cards) {

@@ -20,11 +20,11 @@ public abstract class MenuViewCreator {
     
     /**
      *  Creates the menu bar
-     * @param call
-     * @param opponentName
-     * @return
+     * @param call ???
+     * @param opponentName ???
+     * @return ???
      */
-    public static final Node createMenuView(Call call, String opponentName) {
+    public static Node createMenuView(Call call, String opponentName) {
         var menuBar = new ToolBar();
         var mic = setGraphicNode(call.mute(),"micOn.png","micOff.png");
         mic.setOnMouseClicked(e -> call.switchMute());

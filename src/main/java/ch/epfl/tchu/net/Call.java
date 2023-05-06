@@ -43,6 +43,11 @@ public final class Call {
     // Don't hear the voice when false;
     private BooleanProperty sourdine = new SimpleBooleanProperty(true);
 
+    /**
+     * ???
+     * @param socket - ???
+     * @throws IOException - ???
+     */
     public Call(Socket socket) throws IOException {
         this.socket = socket;
         this.input = this.socket.getInputStream();
@@ -141,14 +146,14 @@ public final class Call {
     public final void switchSourdine() { sourdine.set(!sourdine.get());}
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     public final ReadOnlyBooleanProperty mute() { return mute;}
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     public final ReadOnlyBooleanProperty sourdine() { return sourdine;}
     

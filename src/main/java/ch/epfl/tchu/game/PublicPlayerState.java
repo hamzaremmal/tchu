@@ -21,8 +21,8 @@ public class PublicPlayerState {
       * Creates an instance of the class.
       * @param ticketCount (int) -number of tickets
       * @param cardCount (int) -number of cards
-      * @param routes (List<Route>) -routes of the player
-      * @throws {@code IllegalArgumentException} if the ticketCount or cardCount are negative numbers.
+      * @param routes (List) -routes of the player
+      * @throws IllegalArgumentException if the ticketCount or cardCount are negative numbers.
       * 
       */
     public PublicPlayerState(int ticketCount, int cardCount, List<Route> routes){
@@ -48,7 +48,7 @@ public class PublicPlayerState {
     
     /**
      * Get the routes of the player.
-     * @return (List<Route>) - the list of routes
+     * @return (List) - the list of routes
      */
     public List<Route> routes(){ return Collections.unmodifiableList(routes);}
     

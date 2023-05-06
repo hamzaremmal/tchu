@@ -24,11 +24,11 @@ public final class Game {
     
     /**
      * The method to call to play the game.
-     * @param players (Map<PlayerId, Player>) - Mapping between every player and its PlayerId.
-     * @param playerNames (Map<PlayerId, String>) - Mapping between every playerId and the player's name.
-     * @param tickets (SortedBag<Ticket>) - Tickets to use in the game.
+     * @param players (Map) - Mapping between every player and its PlayerId.
+     * @param playerNames (Map) - Mapping between every playerId and the player's name.
+     * @param tickets (SortedBag) - Tickets to use in the game.
      * @param rng (Random) - Object to shuffle the cards.
-     * @throws {@code IllegalArgumentException} if {@code playerNames.size() != 2 } or {@code players.size() != 2 }.
+     * @throws IllegalArgumentException if {@code playerNames.size() != 2 } or {@code players.size() != 2 }.
      */
     public static void play(Map<PlayerId, Player> players, Map<PlayerId, String> playerNames, SortedBag<Ticket> tickets, Random rng) {
         Preconditions.checkArgument(playerNames.size() == PlayerId.ALL.size());

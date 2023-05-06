@@ -13,7 +13,9 @@ import java.util.Random;
 import ch.epfl.tchu.SortedBag;
 
 
-
+/**
+ * ???
+ */
 public class Automate implements Bot {
   
     private PublicGameState gameState;

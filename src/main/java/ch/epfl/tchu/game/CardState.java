@@ -33,7 +33,7 @@ public final class CardState extends PublicCardState {
 
     /**
      * Create a new CradState object with the given Deck.
-     * @param deck (Deck<Card>) - The deck for the game.
+     * @param deck (Deck) - The deck for the game.
      * @return (CardState) - The cardState object.
      */
     public static CardState of(Deck<Card> deck) {
@@ -50,8 +50,8 @@ public final class CardState extends PublicCardState {
      * Remove one face up card in the given slot.
      * slot must be between 0 and {@code Constants.FACE_UP_CARDS_COUNT}.
      * @param slot (int) - The slot of the card to remove.
-     * @throws {@code IllegalArgumentException} if the deck is empty.
-     * @throws {@code IndexOutOfBoundsException} if the slot is not between 0 and {@code Constants.FACE_UP_CARDS_COUNT}.
+     * @throws IllegalArgumentException if the deck is empty.
+     * @throws IndexOutOfBoundsException if the slot is not between 0 and {@code Constants.FACE_UP_CARDS_COUNT}.
      * @return (CardState) - The new CardState.
      */
     public CardState withDrawnFaceUpCard(int slot) {
@@ -64,7 +64,7 @@ public final class CardState extends PublicCardState {
     
     /**
      * Returns the top card of the deck.
-     * @throws {@code IllegalArgumentException} if the deck is empty.
+     * @throws IllegalArgumentException if the deck is empty.
      * @return (Card) - The top card.
      */
     public Card topDeckCard() {
@@ -74,7 +74,7 @@ public final class CardState extends PublicCardState {
     
     /**
      * Returns a new cardState with the top card of the deck removed.
-     * @throws {@code IllegalArgumentException} if the deck is empty.
+     * @throws IllegalArgumentException if the deck is empty.
      * @return (CardState) - A cardState with the top card removed.
      */
     public CardState withoutTopDeckCard() {
@@ -85,7 +85,7 @@ public final class CardState extends PublicCardState {
     /**
      * Create a new deck with the discarded cards.
      * @param rng (Random) - 
-     * @throws {@code IllegalArgumentException} if the deck is not empty.
+     * @throws IllegalArgumentException if the deck is not empty.
      * @return (CardState) - CardState with new Deck.
      */
     public CardState withDeckRecreatedFromDiscards(Random rng) {
@@ -95,7 +95,7 @@ public final class CardState extends PublicCardState {
     
     /**
      * Add the additional cards given to the discarded cards.
-     * @param additionalCards (SortedBag<Card>) - The cards to add.
+     * @param additionalCards (SortedBag) - The cards to add.
      * @return (CardState) - CardState object with the added cards.
      */
     public CardState withMoreDiscardedCards(SortedBag<Card> additionalCards) { 

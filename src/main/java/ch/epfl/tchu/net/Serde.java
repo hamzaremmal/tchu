@@ -31,9 +31,10 @@ public interface Serde<T> {
 	
 	/**
 	 * creates a serde that can serialize and deserialize an object of class T using the two functions given in parameters
-	 * @param serialize (Function<T, String>) - the serializing function
-	 * @param deserialize (Function<String, T>) - the deserializing function
-	 * @return (Serde<T>) - a serde that operates on objects of class T
+	 * @param serialize (Function) - the serializing function
+	 * @param deserialize (Function) - the deserializing function
+     * @param <T> ???
+	 * @return (Serde) - a serde that operates on objects of class T
 	 */
 	public static <T> Serde<T>  of(Function<T, String> serialize ,Function<String, T> deserialize){
 	    return new Serde<T>() {
@@ -50,8 +51,9 @@ public interface Serde<T> {
 	}
 	/**
 	 * creates a serde that can serialize and deserialize an object belonging to an enumeration 
-	 * @param list (List<T>) - the list of all objects of the enumeration
-	 * @return (Serde<T>) - a serde that operates on objects of class T
+	 * @param list (List) - the list of all objects of the enumeration
+     * @param <T> ???
+	 * @return (Serde) - a serde that operates on objects of class T
 	 */
 	public static <T> Serde<T> oneOf(List<T> list){
 		assert(!list.isEmpty());
@@ -61,9 +63,10 @@ public interface Serde<T> {
 	}
 	/**
 	 * creates a serde that can serialize and deserialize a list of objects of class T
-	 * @param serde (Serde<T>) - a serde that operates on the objects of class T
+	 * @param serde (Serde) - a serde that operates on the objects of class T
 	 * @param c (String) - the delimitation between the serializations of the objects in the list
-	 * @return (Serde<List<T>>) - a serde that operates on a list of objects of class T
+     * @param <T> ???
+	 * @return (Serde) - a serde that operates on a list of objects of class T
 	 */
 	public static <T> Serde<List<T>> listOf(Serde<T> serde, String c){
 	    Function<List<T>,String> serialize   = l ->  l.isEmpty() ? "" : String.join(c, l.stream().map(o -> serde.serialize(o)).collect(Collectors.toList()));
@@ -76,9 +79,10 @@ public interface Serde<T> {
 	
 	/**
 	 * creates a serde that can serialize and deserialize a sorted bag of objects of class T
-	 * @param serde (Serde<T>) - a serde that operates on the objects of class T
+	 * @param serde (Serde) - a serde that operates on the objects of class T
 	 * @param c (String) - the delimitation between the serializations of the objects in the sorted bag
-	 * @return (Serde<SortedBag<T>>) - a serde that operates on a sorted bag of objects of class T
+     * @param <T> ???
+	 * @return (Serde) - a serde that operates on a sorted bag of objects of class T
 	 */
 	public static <T extends Comparable<T>> Serde<SortedBag<T>> bagOf(Serde<T> serde,String c){
 	    Function<SortedBag<T>,String> serialize   = o ->  Serde.listOf(serde, c).serialize(o.toList()); 

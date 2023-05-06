@@ -5,88 +5,163 @@ import ch.epfl.tchu.game.Route.Level;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * ???
+ */
 public final class ChMap {
+    /**
+     * ???
+     */
     private ChMap() { }
 
+    /**
+     * ???
+     * @return ???
+     */
     public static List<Station> stations() {
         return ALL_STATIONS;
     }
 
+    /**
+     * ???
+     * @return ???
+     */
     public static List<Route> routes() {
         return ALL_ROUTES;
     }
 
+    /**
+     * ???
+     * @return ???
+     */
     public static List<Ticket> tickets() {
         return ALL_TICKETS;
     }
 
     // Stations - cities
+    /** ??? */
     private static final Station BAD = new Station(0, "Baden");
+    /** ??? */
     private static final Station BAL = new Station(1, "Bâle");
+    /** ??? */
     private static final Station BEL = new Station(2, "Bellinzone");
+    /** ??? */
     private static final Station BER = new Station(3, "Berne");
+    /** ??? */
     private static final Station BRI = new Station(4, "Brigue");
+    /** ??? */
     private static final Station BRU = new Station(5, "Brusio");
+    /** ??? */
     private static final Station COI = new Station(6, "Coire");
+    /** ??? */
     private static final Station DAV = new Station(7, "Davos");
+    /** ??? */
     private static final Station DEL = new Station(8, "Delémont");
+    /** ??? */
     private static final Station FRI = new Station(9, "Fribourg");
+    /** ??? */
     private static final Station GEN = new Station(10, "Genève");
+    /** ??? */
     private static final Station INT = new Station(11, "Interlaken");
+    /** ??? */
     private static final Station KRE = new Station(12, "Kreuzlingen");
+    /** ??? */
     private static final Station LAU = new Station(13, "Lausanne");
+    /** ??? */
     private static final Station LCF = new Station(14, "La Chaux-de-Fonds");
+    /** ??? */
     private static final Station LOC = new Station(15, "Locarno");
+    /** ??? */
     private static final Station LUC = new Station(16, "Lucerne");
+    /** ??? */
     private static final Station LUG = new Station(17, "Lugano");
+    /** ??? */
     private static final Station MAR = new Station(18, "Martigny");
+    /** ??? */
     private static final Station NEU = new Station(19, "Neuchâtel");
+    /** ??? */
     private static final Station OLT = new Station(20, "Olten");
+    /** ??? */
     private static final Station PFA = new Station(21, "Pfäffikon");
+    /** ??? */
     private static final Station SAR = new Station(22, "Sargans");
+    /** ??? */
     private static final Station SCE = new Station(23, "Schaffhouse");
+    /** ??? */
     private static final Station SCZ = new Station(24, "Schwyz");
+    /** ??? */
     private static final Station SIO = new Station(25, "Sion");
+    /** ??? */
     private static final Station SOL = new Station(26, "Soleure");
+    /** ??? */
     private static final Station STG = new Station(27, "Saint-Gall");
+    /** ??? */
     private static final Station VAD = new Station(28, "Vaduz");
+    /** ??? */
     private static final Station WAS = new Station(29, "Wassen");
+    /** ??? */
     private static final Station WIN = new Station(30, "Winterthour");
+    /** ??? */
     private static final Station YVE = new Station(31, "Yverdon");
+    /** ??? */
     private static final Station ZOU = new Station(32, "Zoug");
+    /** ??? */
     private static final Station ZUR = new Station(33, "Zürich");
 
     // Stations - countries
+    /** ??? */
     private static final Station DE1 = new Station(34, "Allemagne");
+    /** ??? */
     private static final Station DE2 = new Station(35, "Allemagne");
+    /** ??? */
     private static final Station DE3 = new Station(36, "Allemagne");
+    /** ??? */
     private static final Station DE4 = new Station(37, "Allemagne");
+    /** ??? */
     private static final Station DE5 = new Station(38, "Allemagne");
+    /** ??? */
     private static final Station AT1 = new Station(39, "Autriche");
+    /** ??? */
     private static final Station AT2 = new Station(40, "Autriche");
+    /** ??? */
     private static final Station AT3 = new Station(41, "Autriche");
+    /** ??? */
     private static final Station IT1 = new Station(42, "Italie");
+    /** ??? */
     private static final Station IT2 = new Station(43, "Italie");
+    /** ??? */
     private static final Station IT3 = new Station(44, "Italie");
+    /** ??? */
     private static final Station IT4 = new Station(45, "Italie");
+    /** ??? */
     private static final Station IT5 = new Station(46, "Italie");
+    /** ??? */
     private static final Station FR1 = new Station(47, "France");
+    /** ??? */
     private static final Station FR2 = new Station(48, "France");
+    /** ??? */
     private static final Station FR3 = new Station(49, "France");
+    /** ??? */
     private static final Station FR4 = new Station(50, "France");
 
     // Countries
+    /** ??? */
     private static final List<Station> DE = List.of(DE1, DE2, DE3, DE4, DE5);
+    /** ??? */
     private static final List<Station> AT = List.of(AT1, AT2, AT3);
+    /** ??? */
     private static final List<Station> IT = List.of(IT1, IT2, IT3, IT4, IT5);
+    /** ??? */
     private static final List<Station> FR = List.of(FR1, FR2, FR3, FR4);
 
+    /** ??? */
     private static final List<Station> ALL_STATIONS = List.of(
             BAD, BAL, BEL, BER, BRI, BRU, COI, DAV, DEL, FRI, GEN, INT, KRE, LAU, LCF, LOC, LUC,
             LUG, MAR, NEU, OLT, PFA, SAR, SCE, SCZ, SIO, SOL, STG, VAD, WAS, WIN, YVE, ZOU, ZUR,
             DE1, DE2, DE3, DE4, DE5, AT1, AT2, AT3, IT1, IT2, IT3, IT4, IT5, FR1, FR2, FR3, FR4);
 
     // Routes
+    /** ??? */
     private static final List<Route> ALL_ROUTES = List.of(
             new Route("AT1_STG_1", AT1, STG, 4, Level.UNDERGROUND, null),
             new Route("AT2_VAD_1", AT2, VAD, 1, Level.UNDERGROUND, Color.RED),
@@ -178,11 +253,16 @@ public final class ChMap {
             new Route("ZOU_ZUR_2", ZOU, ZUR, 1, Level.OVERGROUND, Color.RED));
 
     // Tickets
+    /** ??? */
     private static final Ticket deToNeighbors = ticketToNeighbors(DE, 0, 5, 13, 5);
+    /** ??? */
     private static final Ticket atToNeighbors = ticketToNeighbors(AT, 5, 0, 6, 14);
+    /** ??? */
     private static final Ticket itToNeighbors = ticketToNeighbors(IT, 13, 6, 0, 11);
+    /** ??? */
     private static final Ticket frToNeighbors = ticketToNeighbors(FR, 5, 14, 11, 0);
 
+    /** ??? */
     private static final List<Ticket> ALL_TICKETS = List.of(
             // City-to-city tickets
             new Ticket(BAL, BER, 5),
@@ -232,6 +312,15 @@ public final class ChMap {
             itToNeighbors, itToNeighbors,
             frToNeighbors, frToNeighbors);
 
+    /**
+     * ???
+     * @param from ???
+     * @param de ???
+     * @param at ???
+     * @param it ???
+     * @param fr ???
+     * @return ???
+     */
     private static Ticket ticketToNeighbors(List<Station> from, int de, int at, int it, int fr) {
         var trips = new ArrayList<Trip>();
         if (de != 0) trips.addAll(Trip.all(from, DE, de));

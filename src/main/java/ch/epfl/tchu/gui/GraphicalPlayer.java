@@ -53,7 +53,8 @@ public class GraphicalPlayer {
     /**
      * Creates an instance of GraphicalPlayer
      * @param id (PlayerId) - the identity of the player
-     * @param nameMap (Map<PlayerId, String>) - a map with the identities of all players and they're names
+     * @param nameMap (Map) - a map with the identities of all players and they're names
+     * @param call ???
      */
      public GraphicalPlayer(PlayerId id, Map<PlayerId, String> nameMap, Call call) {
          if (!Platform.isFxApplicationThread()) 
@@ -204,7 +205,7 @@ public class GraphicalPlayer {
     
     /**
      * Creates a window that allows the player to choose a sorted bag of cards from a list of options
-     * @param options (List<SortedBag<Card>>) - the list of options to choose from
+     * @param options (List) - the list of options to choose from
      * @param chooseCardsHandler (ChooseCardsHandler) - the handler that communicates the choice of the player to the game thread
      */
   public void chooseAdditionalCards(List<SortedBag<Card>> options, ChooseCardsHandler chooseCardsHandler) {
@@ -245,7 +246,7 @@ public class GraphicalPlayer {
     
     /**
      * Creates a window that will allow the player to choose a ticket from a sorted bag of options
-     * @param options (SortedBag<Ticket>) - the options to choose from
+     * @param options (SortedBag) - the options to choose from
      * @param chooseTicketsHandler (ChooseTicketsHandler) -the handler that communicates the choice of the player to the game thread
      */
     public void chooseTickets(SortedBag<Ticket> options, ChooseTicketsHandler chooseTicketsHandler) {
@@ -256,7 +257,7 @@ public class GraphicalPlayer {
     
     /**
      * Creates a window that will allow the player to choose the initial tickets from a sorted bag of options
-     * @param options (SortedBag<Ticket>) - the options to choose from
+     * @param tickets (SortedBag) - the options to choose from
      * @param chooseTicketsHandler (ChooseTicketsHandler) -the handler that communicates the choice of the player to the game thread
      */
     public void setInitialTicketChoice(SortedBag<Ticket> tickets, ChooseTicketsHandler chooseTicketsHandler) {
@@ -268,7 +269,7 @@ public class GraphicalPlayer {
     /**
      * Creates a window that will allow the player to choose a sorted bag of cards to
      * attempt to claim a route from a list of options
-     * @param options (List<SortedBag<Card>>) - the list of sorted bag of cards to choose form
+     * @param options (List) - the list of sorted bag of cards to choose form
      * @param chooseCardHandler (ChooseCardsHandler) -the handler that communicates the choice of the player to the game thread
      */
     public void chooseClaimCards(List<SortedBag<Card>> options,ChooseCardsHandler chooseCardHandler) {

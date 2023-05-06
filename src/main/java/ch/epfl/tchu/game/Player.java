@@ -19,80 +19,85 @@ public interface Player {
      * @author Mehdi ZIAZI (311475)
      *
      */
-    public enum TurnKind {
+    enum TurnKind {
+        /** ??? */
         DRAW_TICKETS,
+        /** ??? */
         DRAW_CARDS,
+        /** ??? */
         CLAIM_ROUTE;
+
+        /** ??? */
         public static final List<TurnKind> ALL = List.of(TurnKind.values());
     }
 
     /**
-     * 
-     * @param ownId
-     * @param playerNames
+     * ???
+     * @param ownId - ???
+     * @param playerNames - ???
      */
     void initPlayers(PlayerId ownId, Map<PlayerId, String> playerNames);
     
     /**
-     * 
-     * @param info
+     * ???
+     * @param info - ???
      */
     void receiveInfo(String info);
     
     /**
-     * 
-     * @param newState
-     * @param ownState
+     * ???
+     * @param newState - ???
+     * @param ownState - ???
      */
     void updateState(PublicGameState newState, PlayerState ownState);
     
     /**
-     * 
-     * @param tickets
+     * ???
+     * @param tickets - ???
      */
     void setInitialTicketChoice(SortedBag<Ticket> tickets);
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     SortedBag<Ticket> chooseInitialTickets();
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     TurnKind nextTurn();
     
     /**
-     * 
-     * @param options
-     * @return
+     * ???
+     * @param options - ???
+     * @return ???
      */
     SortedBag<Ticket> chooseTickets(SortedBag<Ticket> options);
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     int drawSlot();
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     Route claimedRoute();
     
     /**
-     * 
-     * @return
+     * ???
+     * @return ???
      */
     SortedBag<Card> initialClaimCards();
     
     /**
-     * 
-     * @param options
-     * @return
+     * ???
+     * @param options - ???
+     * @return - ???
      */
     SortedBag<Card> chooseAdditionalCards(List<SortedBag<Card>> options);
 }

@@ -18,10 +18,10 @@ public class PublicCardState {
     
     /**
      * Construct a new object with the given parameters.
-     * @param faceUpCards (List<Card>) - List of the face up cards.
+     * @param faceUpCards (List) - List of the face up cards.
      * @param deckSize (int) - The size of the deck.
      * @param discardsSize (int) -  The size of the discards.
-     * @throws {@code IllegalArgumentException} if {@code faceUpCards.size() != Constants.FACE_UP_CARDS_COUNT} or {@code deckSize < 0} or {@code discardsSize < 0};
+     * @throws IllegalArgumentException if {@code faceUpCards.size() != Constants.FACE_UP_CARDS_COUNT} or {@code deckSize < 0} or {@code discardsSize < 0};
      */
     public PublicCardState(List<Card> faceUpCards, int deckSize, int discardsSize) {
         Preconditions.checkArgument(faceUpCards.size() == Constants.FACE_UP_CARDS_COUNT && deckSize >= 0 && discardsSize >= 0);
@@ -32,14 +32,14 @@ public class PublicCardState {
 
     /**
      * Get the list of all face up cards.
-     * @return (List<Card>) - List of the face up cards.
+     * @return (List) - List of the face up cards.
      */
     public List<Card> faceUpCards(){ return faceUpCards;}
     
     /**
      * Returns the face up card in the given slot.
      * @param slot (int) - The slot of the card.
-     * @throws {@code IndexOutOfBoundsException} if slot is not between 0 and {@code Constants.FACE_UP_CARDS_COUNT} (exclusive).
+     * @throws IndexOutOfBoundsException if slot is not between 0 and {@code Constants.FACE_UP_CARDS_COUNT} (exclusive).
      * @return (Card) - The card in the given slot.
      */
     public Card faceUpCard(int slot) {
