@@ -29,7 +29,7 @@ jobs:
           cache: maven
       - name: Execute tests
         run: mvn test --file pom.xml
-      - uses: paambaati/codeclimate-action@v2.2.4
+      - uses: paambaati/codeclimate-action@v4.0.0
         env:
           CC_TEST_REPORTER_ID: d0dd5722169d6abffb0c82baef826ba0554e07ec4330723929511a4413f9faaa
         with:
